@@ -8,7 +8,6 @@ import { useEmptyTokenAccounts } from "@/hooks/use-empty-token-accounts";
 import { useCloseEmptyAccounts } from "@/hooks/use-close-empty-accounts";
 import { useJupTokenMeta } from "@/hooks/use-jup-token-meta";
 import { lamportsToSol, shortPk } from "@/lib/format";
-import LaserFrame from "@/components/effects/laser-frame";
 
 type MintGroup = {
     mint: string;
