@@ -3,14 +3,10 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Brush, Flame, Sparkles } from "lucide-react";
+import { Brush, Flame } from "lucide-react";
 import { EmptyAccounts } from "@/components/views/empty-accounts";
 import { BurnNftsBasic } from "@/components/views/burn-nfts-basic";
 import dynamic from "next/dynamic";
-
-const LaserFlow = dynamic(() => import("@/components/LaserFlowBoxExample"), {
-    ssr: false,
-});
 
 type Tab = "close" | "burn";
 
@@ -38,17 +34,6 @@ export function Shell() {
                 <div className="absolute -bottom-40 left-1/3 h-130 w-130 rounded-full bg-cyan-500/20 blur-3xl" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,.08)_1px,transparent_0)] bg-size:[22px_22px]" />
             </div>
-
-            {/* Laser background (only on Close tab) */}
-            {/* {tab === "close" ? (
-                <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
-                    <LaserFlow
-                        color="#FF79C6"
-                        horizontalBeamOffset={0.5}
-                        verticalBeamOffset={0.0}
-                    />
-                </div>
-            ) : null} */}
 
             <header className="relative z-20 mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-5">
                 <div className="flex items-center gap-3">
