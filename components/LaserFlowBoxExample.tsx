@@ -1,5 +1,6 @@
 import LaserFlow from './effects/LaserFlow';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 // NOTE: You can also adjust the variables in the shader for super detailed customization
 
@@ -10,7 +11,7 @@ import { useRef } from 'react';
 
 // Image Example Interactive Reveal Effect
 function LaserFlowBoxExample() {
-    const revealImgRef = useRef(null);
+    const revealImgRef = useRef<HTMLImageElement>(null);
 
     return (
         <div
@@ -64,13 +65,12 @@ function LaserFlowBoxExample() {
                 {/* Your content here */}
             </div>
 
-            <img
+            <Image
                 ref={revealImgRef}
                 src="/path/to/image.jpg"
                 alt="Reveal effect"
+                fill
                 style={{
-                    position: 'absolute',
-                    width: '100%',
                     top: '-50%',
                     zIndex: 5,
                     mixBlendMode: 'lighten',
@@ -82,7 +82,7 @@ function LaserFlowBoxExample() {
                     maskImage: 'radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)',
                     WebkitMaskRepeat: 'no-repeat',
                     maskRepeat: 'no-repeat'
-                }}
+                } as React.CSSProperties}
             />
         </div>
     );
